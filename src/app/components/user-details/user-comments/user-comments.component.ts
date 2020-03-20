@@ -1,18 +1,11 @@
-import { Component, OnInit, Input } from '@angular/core';
+import { Component, Input } from '@angular/core';
+
 import {Comment} from '../../../interfaces/comment-interface'
 
 @Component({
   selector: 'app-user-comments',
-  templateUrl: './user-comments.component.html',
-  styleUrls: ['./user-comments.component.scss']
+  templateUrl: './user-comments.component.html'
 })
-export class UserCommentsComponent implements OnInit {
-  @Input() commentList:Comment[]
-
-
-  constructor() { }
-
-  ngOnInit(): void {
-  }
-
+export class UserCommentsComponent {
+  @Input() commentList: Comment[]
 }

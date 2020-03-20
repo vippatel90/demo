@@ -1,9 +1,11 @@
 import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
-import {User} from '../interfaces/user-interface'
-import {Post} from '../interfaces/post-interface'
-import {Comment} from '../interfaces/comment-interface'
-import {Observable} from 'rxjs';
+import { Observable } from 'rxjs';
+
+import { User } from '../interfaces/user-interface'
+import { Post } from '../interfaces/post-interface'
+import { Comment } from '../interfaces/comment-interface';
+
 
 @Injectable({
   providedIn: 'root'
@@ -23,15 +25,15 @@ export class UserServiceService {
   }
 
   getUserById(id: number): User {
-    return this.userList.find(i => i.id == +id);
+    return this.userList.find(i => i.id === +id);
   }
 
-  getUserPosts():Observable<Post[]> {
+  getUserPosts(): Observable<Post[]> {
     return this.http.get<Post[]>(this.url + 'posts');
       }
- 
- getComments():Observable<Comment[]>{
+
+ getComments(): Observable<Comment[]> {
   return this.http.get<Comment[]>(this.url + 'comments');
  }
- 
+
 }

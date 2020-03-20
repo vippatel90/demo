@@ -1,9 +1,11 @@
 import { Component, OnChanges, ChangeDetectorRef, Input, SimpleChanges } from '@angular/core';
+import { HttpErrorResponse } from '@angular/common/http';
+
 import { User } from '../../interfaces/user-interface';
 import { Post } from '../../interfaces/post-interface';
 import { Comment } from '../../interfaces/comment-interface';
 import { UserServiceService } from '../../services/user-service.service';
-import { HttpErrorResponse } from '@angular/common/http';
+
 
 
 @Component({
@@ -69,6 +71,4 @@ export class UserDetailsComponent implements OnChanges {
      this.getUserPosts();
    }
   }
-
-
 }
